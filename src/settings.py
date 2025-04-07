@@ -43,10 +43,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+   'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -54,6 +54,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'src.urls'
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+    # Add other origins as needed
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+
+
 
 TEMPLATES = [
     {
@@ -68,12 +77,6 @@ TEMPLATES = [
             ],
         },
     },
-]
-
-
-CORS_ALLOWED_ORIGINS = [
-    "https://c-abhijith.github.io",
-    "http://localhost:5173",  # React app running on port 5173
 ]
 
 WSGI_APPLICATION = 'src.wsgi.application'
