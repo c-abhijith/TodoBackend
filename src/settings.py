@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7ob7zpd%#!=gh=5yh)#3a%87pfxqu10*x7z5yxjy)v10(^0=ul
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Abhi2200.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'Abhi2200.pythonanywhere.com']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo_app',
+    'todo',
     'rest_framework',
 ]
 
@@ -115,8 +115,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+import os
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
